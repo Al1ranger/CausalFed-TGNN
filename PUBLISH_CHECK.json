@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "copied_runs": 230,
+  "release_members": 275,
+  "docx_zip_integrity": "PASS",
+  "docx_xml_tables": 18,
+  "document_layout": "UNVERIFIED: renderer blocked",
+  "all_release_member_sha256": "PASS",
+  "archive_sha256": "6389592c3e1719516670a5b5a491cf075cd5b7da05e41ea2923751181063e0e8"
+}

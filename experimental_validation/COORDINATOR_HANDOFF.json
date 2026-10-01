@@ -1,0 +1,8 @@
+{
+  "status": "CENTRAL_50K_100K_SAVED",
+  "stopped_pids": [
+    32680
+  ],
+  "reason": "500k owned by disjoint workers; avoid duplicate training",
+  "trigger": "D:\\Study\\Papers\\p7\\experimental_validation\\results\\runs\\100000_46_homogeneous_centralized_clean.json"
+}

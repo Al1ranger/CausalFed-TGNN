@@ -1,0 +1,8 @@
+..............                                                           [100%]
+============================== warnings summary ===============================
+experimental_validation\packages\torch\jit\_script.py:1491
+  D:\Study\Papers\p7\experimental_validation\packages\torch\jit\_script.py:1491: FutureWarning: `torch.jit.script` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+14 passed, 1 warning in 23.73s

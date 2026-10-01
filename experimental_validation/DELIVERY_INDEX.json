@@ -1,0 +1,70 @@
+{
+  "study_status": "PARTIAL SCREENING STUDY",
+  "centralized_matrix_complete": true,
+  "missing_centralized_cells": [],
+  "verified_runs": 230,
+  "required_files": {
+    "CausalFed_TGNN_Experimental_Validation_Complete.docx": {
+      "exists": true,
+      "sha256": "d82e710a0314736e8b72315b1434afddcf52e927b9490aa46fef1451ea539887"
+    },
+    "RESULTS_MANIFEST.json": {
+      "exists": true,
+      "sha256": "75acb662bd0cf8c771ed6048288d20b96bba69e4d7bae36d4acc9aa099269d57"
+    },
+    "EXPERIMENT_STATUS.md": {
+      "exists": true,
+      "sha256": "009b528d36e0e2f5f72c31110786b027aa90b97f2ed83945a07ef19587b6225b"
+    },
+    "RESEARCH_AUDIT.md": {
+      "exists": true,
+      "sha256": "4b51c59ef450040bb48a9203b0719c75a4bba2e863f4f795576ab06b2d789c84"
+    },
+    "DATA_AUDIT.md": {
+      "exists": true,
+      "sha256": "37c3fd5d1bc75a754ff2bf0de58f164110f5557b55faf162a1aebfb81d382548"
+    },
+    "ENVIRONMENT_REPORT.md": {
+      "exists": true,
+      "sha256": "ded7e5352c3e4eeb4ba7a94aa6f460541caf37dacd641a0bfc9a8cc919597e40"
+    },
+    "TEST_REPORT.md": {
+      "exists": true,
+      "sha256": "b42c85a9d903999a0289c080c2984242c46ae3dc70f7395fb2d9f26113dd5664"
+    },
+    "EXPERIMENTAL_METHODS.md": {
+      "exists": true,
+      "sha256": "b764645bd3cec3bbb3d6d3dbb2df006cd5f767bbd7213112ee75566e53e40195"
+    },
+    "RESULTS_SUMMARY.md": {
+      "exists": true,
+      "sha256": "a45cacb35ef1b16e3e76c4768f3dc1c6ea0941d93bbb95e56c988f655e1273e3"
+    },
+    "LIMITATIONS_AND_OPEN_ITEMS.md": {
+      "exists": true,
+      "sha256": "771d94ed13af80d9a2d89ecfb1a34429e4021cf9da378bdaaf8031ada89e2103"
+    },
+    "REPRODUCTION.md": {
+      "exists": true,
+      "sha256": "f8f6eea2add5301d56e226fa453ed4deee41ffbbc525c039c04741a7b8e42998"
+    },
+    "DOCUMENT_QA.md": {
+      "exists": true,
+      "sha256": "faada4233c13f84a64bac5b7b55cbef54bbf8901fc0870d9e97b51b8fbf18739"
+    }
+  },
+  "run_records": "results/runs",
+  "tables": "results/tables",
+  "figures": "results/figures",
+  "checkpoints": "Paths in each run record include results/checkpoints and worker_*/checkpoints",
+  "unmet_stronger_gates": [
+    "continual adaptation",
+    "variable-arrival temporal stress",
+    "public-data empirical validation",
+    "unseen-bank transfer",
+    "adaptive aggregation",
+    "explanation evaluation",
+    "public release"
+  ],
+  "document_layout_status": "UNVERIFIED: automated renderer blocked; see DOCUMENT_QA.md"
+}

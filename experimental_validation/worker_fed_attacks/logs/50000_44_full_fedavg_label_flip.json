@@ -1,0 +1,506 @@
+[
+  {
+    "epoch_or_round": 1,
+    "train_loss": 0.8621769963884354,
+    "validation_loss": 0.6899227499961853,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.04826086956521739,
+      "precision": 0.025844004656577414,
+      "recall": 0.3639344262295082,
+      "fpr": 0.43156266116554926,
+      "auroc": 0.4365402142392141,
+      "ap": 0.026722676106913312,
+      "fpr95": 0.962867457452295,
+      "balanced_accuracy": 0.46618588253197946,
+      "brier": 0.2483918388330967,
+      "ece": 0.4661222170710564
+    },
+    "seconds": 2.897811900009401,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8173931477355957,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.8629123678016662,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.944948771572113,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.8234536984443664,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 2,
+    "train_loss": 0.7942290980386734,
+    "validation_loss": 0.6167095899581909,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.03513022410660206,
+      "precision": 0.021545319465081723,
+      "recall": 0.09508196721311475,
+      "fpr": 0.13584321815368747,
+      "auroc": 0.4378895661951826,
+      "ap": 0.026636018804225246,
+      "fpr95": 0.9634863331614234,
+      "balanced_accuracy": 0.4796193745297136,
+      "brier": 0.21203932193127512,
+      "ece": 0.42529963846802715
+    },
+    "seconds": 2.7457976999576204,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8130290539169311,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.7710282898712159,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.8455956425476074,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.7472634058189392,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 3,
+    "train_loss": 0.741392326426506,
+    "validation_loss": 0.5556590557098389,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.44194489300721174,
+      "ap": 0.026475746692150248,
+      "fpr95": 0.961835997937081,
+      "balanced_accuracy": 0.5,
+      "brier": 0.18212080997438743,
+      "ece": 0.38843679460287095
+    },
+    "seconds": 4.613071299972944,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8132740867614746,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.6984537230110168,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.7673052402877808,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.6865362556457519,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 4,
+    "train_loss": 0.6982218923187256,
+    "validation_loss": 0.5040903091430664,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.4455773214180032,
+      "ap": 0.026352335300887233,
+      "fpr95": 0.961835997937081,
+      "balanced_accuracy": 0.5,
+      "brier": 0.15742557470673912,
+      "ece": 0.3550958106726408
+    },
+    "seconds": 2.344786900037434,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.818486482925415,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.6376562119483947,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.7014799639129639,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.6352649104881286,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 5,
+    "train_loss": 0.6631737207221986,
+    "validation_loss": 0.46127232909202576,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.44853524294253416,
+      "ap": 0.0261595320708256,
+      "fpr95": 0.9656523981433729,
+      "balanced_accuracy": 0.5,
+      "brier": 0.13753156688827609,
+      "ece": 0.3257168831825256
+    },
+    "seconds": 1.9516690999735147,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8292808185768128,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.5862954767036438,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.6454270643234253,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.5916915232849121,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 6,
+    "train_loss": 0.6331277635526658,
+    "validation_loss": 0.4243374168872833,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.4510173403562762,
+      "ap": 0.026102347976958738,
+      "fpr95": 0.9683341928829293,
+      "balanced_accuracy": 0.5,
+      "brier": 0.12096363227716248,
+      "ece": 0.29902152747213845
+    },
+    "seconds": 2.2055124000180513,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8353991216278076,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.5432914317703247,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.5983334655761718,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.5554870352363587,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 7,
+    "train_loss": 0.6106037080001832,
+    "validation_loss": 0.3940935432910919,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.4530433973909146,
+      "ap": 0.02613613418597549,
+      "fpr95": 0.9701908200103146,
+      "balanced_accuracy": 0.5,
+      "brier": 0.10789743189530082,
+      "ece": 0.2761556964427233
+    },
+    "seconds": 2.180485699966084,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8543135395050049,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.5064375859260559,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.5574087494850158,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.5242549570846557,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 8,
+    "train_loss": 0.5918325988316536,
+    "validation_loss": 0.3670561909675598,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 305,
+      "negative": 9695,
+      "threshold": 0.5,
+      "f1": 0.0,
+      "precision": 0.0,
+      "recall": 0.0,
+      "fpr": 0.0,
+      "auroc": 0.4540716441633765,
+      "ap": 0.02616389491232759,
+      "fpr95": 0.97132542547705,
+      "balanced_accuracy": 0.5,
+      "brier": 0.09667955983718265,
+      "ece": 0.25484193826317786
+    },
+    "seconds": 2.0591537000145763,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.868716801147461,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.4762208394908905,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.5233244621276856,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.4990682925605774,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.25,
+      0.25,
+      0.25,
+      0.25
+    ],
+    "aggregation": "sample-weighted mean"
+  }
+]

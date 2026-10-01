@@ -1,0 +1,497 @@
+[
+  {
+    "scale": 50000,
+    "seed": 42,
+    "dataset_hash": "6d9fdb09df8a952762ed0bcd6304bea561b64fa261973f692b4a37e479b4f0dd",
+    "rows": 50000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a74dc9af3150fbe2515734753c04e8d17c2d855df3186377b1d73d373336606c",
+    "supports": {
+      "train": {
+        "rows": 25000,
+        "fraud": 716,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 10000,
+        "fraud": 286,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 15000,
+        "fraud": 903,
+        "unknown": 586
+      }
+    },
+    "graph_seconds": 8.15799259999767
+  },
+  {
+    "scale": 50000,
+    "seed": 43,
+    "dataset_hash": "f7d5a84ee96ddee40a19c924017096bc0bd50ba5fe2e2e0c4e7eab7d7d09fbf4",
+    "rows": 50000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a74dc9af3150fbe2515734753c04e8d17c2d855df3186377b1d73d373336606c",
+    "supports": {
+      "train": {
+        "rows": 25000,
+        "fraud": 739,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 10000,
+        "fraud": 298,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 15000,
+        "fraud": 894,
+        "unknown": 609
+      }
+    },
+    "graph_seconds": 8.653585600026418
+  },
+  {
+    "scale": 50000,
+    "seed": 44,
+    "dataset_hash": "10a7556ac48d16e2b0d5ffd792cb0e16dcb28d442daf8ac5fb21dd9bc4b1e815",
+    "rows": 50000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a74dc9af3150fbe2515734753c04e8d17c2d855df3186377b1d73d373336606c",
+    "supports": {
+      "train": {
+        "rows": 25000,
+        "fraud": 692,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 10000,
+        "fraud": 305,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 15000,
+        "fraud": 878,
+        "unknown": 590
+      }
+    },
+    "graph_seconds": 7.680771899991669
+  },
+  {
+    "scale": 50000,
+    "seed": 45,
+    "dataset_hash": "20f76f7707407f652c7660ab4f5d6cbc8bcb4b66a0594deb427d3912e0277795",
+    "rows": 50000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a74dc9af3150fbe2515734753c04e8d17c2d855df3186377b1d73d373336606c",
+    "supports": {
+      "train": {
+        "rows": 25000,
+        "fraud": 759,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 10000,
+        "fraud": 299,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 15000,
+        "fraud": 872,
+        "unknown": 557
+      }
+    },
+    "graph_seconds": 9.064682799973525
+  },
+  {
+    "scale": 50000,
+    "seed": 46,
+    "dataset_hash": "796a48831eb4cc6082a8119ba96c84e2e86737215f95560bffe1781d95b1a116",
+    "rows": 50000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a74dc9af3150fbe2515734753c04e8d17c2d855df3186377b1d73d373336606c",
+    "supports": {
+      "train": {
+        "rows": 25000,
+        "fraud": 742,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 10000,
+        "fraud": 305,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 15000,
+        "fraud": 883,
+        "unknown": 565
+      }
+    },
+    "graph_seconds": 8.322807399963494
+  },
+  {
+    "scale": 100000,
+    "seed": 42,
+    "dataset_hash": "6cf46dd2125c8d8ef45074d3dbe77bad526d9b3379b6f2778e7d60e4901755d6",
+    "rows": 100000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a1629d8b1bc37cc79967c3d834521e77fa4c3d20b4bfe80a7f8b0d388e4b5447",
+    "supports": {
+      "train": {
+        "rows": 50000,
+        "fraud": 1408,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 20000,
+        "fraud": 619,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 30000,
+        "fraud": 1765,
+        "unknown": 1160
+      }
+    },
+    "graph_seconds": 19.572457399975974
+  },
+  {
+    "scale": 100000,
+    "seed": 43,
+    "dataset_hash": "302afdf7efbf98a516e3e877cdc03953a75b61b4a4f9461c0d63087e1ded4b67",
+    "rows": 100000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a1629d8b1bc37cc79967c3d834521e77fa4c3d20b4bfe80a7f8b0d388e4b5447",
+    "supports": {
+      "train": {
+        "rows": 50000,
+        "fraud": 1491,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 20000,
+        "fraud": 558,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 30000,
+        "fraud": 1789,
+        "unknown": 1132
+      }
+    },
+    "graph_seconds": 15.744452400016598
+  },
+  {
+    "scale": 100000,
+    "seed": 44,
+    "dataset_hash": "d614e446820fa1ef0aeedff3997da07ab5ac90f52cb222a295d0e265fee167ed",
+    "rows": 100000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a1629d8b1bc37cc79967c3d834521e77fa4c3d20b4bfe80a7f8b0d388e4b5447",
+    "supports": {
+      "train": {
+        "rows": 50000,
+        "fraud": 1493,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 20000,
+        "fraud": 581,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 30000,
+        "fraud": 1785,
+        "unknown": 1173
+      }
+    },
+    "graph_seconds": 16.603302799980156
+  },
+  {
+    "scale": 100000,
+    "seed": 45,
+    "dataset_hash": "04a74114525cd673471cdf91ead96e70aa4044c3ee44d39f6d8646ddaf7b6e6c",
+    "rows": 100000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a1629d8b1bc37cc79967c3d834521e77fa4c3d20b4bfe80a7f8b0d388e4b5447",
+    "supports": {
+      "train": {
+        "rows": 50000,
+        "fraud": 1487,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 20000,
+        "fraud": 609,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 30000,
+        "fraud": 1752,
+        "unknown": 1164
+      }
+    },
+    "graph_seconds": 14.4277798999683
+  },
+  {
+    "scale": 100000,
+    "seed": 46,
+    "dataset_hash": "1854a2bee97c72054981ab98f7eb7957e3426e47487392d4662fd5183d470382",
+    "rows": 100000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "a1629d8b1bc37cc79967c3d834521e77fa4c3d20b4bfe80a7f8b0d388e4b5447",
+    "supports": {
+      "train": {
+        "rows": 50000,
+        "fraud": 1483,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 20000,
+        "fraud": 627,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 30000,
+        "fraud": 1702,
+        "unknown": 1126
+      }
+    },
+    "graph_seconds": 15.412651100021321
+  },
+  {
+    "scale": 500000,
+    "seed": 42,
+    "dataset_hash": "acac778db74380dd86c2fd29272bff57857795e5987bf0b9b421adc13e0e25fc",
+    "rows": 500000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "6a1bd32bca46eec1d3db3f298218860fbcb78c54e1e2860eb77c77e36507bcf0",
+    "supports": {
+      "train": {
+        "rows": 250000,
+        "fraud": 7478,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 100000,
+        "fraud": 2904,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 150000,
+        "fraud": 8760,
+        "unknown": 5730
+      }
+    },
+    "graph_seconds": 93.16043820005143
+  },
+  {
+    "scale": 500000,
+    "seed": 43,
+    "dataset_hash": "031b18fe71426f24b1e356d2471e35b20d377cca27c223d4574f9fc537877c58",
+    "rows": 500000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "6a1bd32bca46eec1d3db3f298218860fbcb78c54e1e2860eb77c77e36507bcf0",
+    "supports": {
+      "train": {
+        "rows": 250000,
+        "fraud": 7417,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 100000,
+        "fraud": 2897,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 150000,
+        "fraud": 8849,
+        "unknown": 5691
+      }
+    },
+    "graph_seconds": 87.77967580000404
+  },
+  {
+    "scale": 500000,
+    "seed": 44,
+    "dataset_hash": "55b23380da093ec322be3fc545af916e5a931d938b8cad3bea85d1de7366aa2e",
+    "rows": 500000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "6a1bd32bca46eec1d3db3f298218860fbcb78c54e1e2860eb77c77e36507bcf0",
+    "supports": {
+      "train": {
+        "rows": 250000,
+        "fraud": 7293,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 100000,
+        "fraud": 2920,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 150000,
+        "fraud": 8787,
+        "unknown": 5646
+      }
+    },
+    "graph_seconds": 86.82110820000526
+  },
+  {
+    "scale": 500000,
+    "seed": 45,
+    "dataset_hash": "513ebacae6f504c421fe420cf38ef3cded9e495ded077fd7c360bdc9ac18ea6b",
+    "rows": 500000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "6a1bd32bca46eec1d3db3f298218860fbcb78c54e1e2860eb77c77e36507bcf0",
+    "supports": {
+      "train": {
+        "rows": 250000,
+        "fraud": 7414,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 100000,
+        "fraud": 2885,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 150000,
+        "fraud": 9093,
+        "unknown": 5899
+      }
+    },
+    "graph_seconds": 125.82561569998506
+  },
+  {
+    "scale": 500000,
+    "seed": 46,
+    "dataset_hash": "bd31aa77b193d7cbca23e5b62053d903885b35be5017839b319d554aa0777d8a",
+    "rows": 500000,
+    "banks": 4,
+    "source_globally_sorted": false,
+    "duplicate_ids": 0,
+    "unknown_train": 0,
+    "unknown_validation": 0,
+    "bank_gap_minutes": [
+      1440.0
+    ],
+    "split_hash": "6a1bd32bca46eec1d3db3f298218860fbcb78c54e1e2860eb77c77e36507bcf0",
+    "supports": {
+      "train": {
+        "rows": 250000,
+        "fraud": 7421,
+        "unknown": 0
+      },
+      "validation": {
+        "rows": 100000,
+        "fraud": 2964,
+        "unknown": 0
+      },
+      "test": {
+        "rows": 150000,
+        "fraud": 8734,
+        "unknown": 5666
+      }
+    },
+    "graph_seconds": 125.72921499999939
+  }
+]

@@ -1,0 +1,150 @@
+{
+  "source": "C:\\Users\\ehsan\\Downloads\\CausalFed_TGNN_Scientific_Analysis_Edited_Final.docx",
+  "output": "D:\\Study\\Papers\\p7\\experimental_validation\\CausalFed_TGNN_Experimental_Validation_Complete.docx",
+  "edits": [
+    {
+      "paragraph": 5,
+      "before": "Financial fraud detection across institutions must accommodate heterogeneous relations, temporal distribution shift, data-locality constraints, and fraud mechanisms that may be absent from training. CausalFed-TGNN is formulated as a federated heterogeneous temporal graph framework that combines relation-aware temporal encoding, invariant/environment-specific representation learning, independent novelty scoring, and provenance-aware evaluation. The term causal is retained as a project name and design motivation; the present study does not perform causal identification. We reanalyse 15 hash-verified synthetic streams at 50,000, 100,000, and 500,000 events and execute 30 pooled logistic-regression fits across two baseline feature sets using disjoint chronological training, validation, and test partitions. Unknown mechanisms D/E are excluded from model fitting and threshold calibration. At 500,000 events, the amount-only and historical-context baselines achieve known-class AUROC of 0.548 \u00b1 0.006 and 0.515 \u00b1 0.009, respectively (mean \u00b1 sample SD across five seeds). A corrected amount-based novelty proxy achieves unknown AUROC of 0.544 \u00b1 0.005. The audit also identifies fixed daily event spacing and corrects reversed, tie-sensitive legacy ranking metrics. These completed experiments establish an auditable synthetic baseline but do not validate CausalFed-TGNN. Neural, federated-adversarial, ablation, and public-data evaluations remain pending.",
+      "after": "Financial fraud detection across institutions combines heterogeneous relations, temporal shift, and fraud mechanisms absent from training. We operationalise CausalFed-TGNN as a finite-history heterogeneous graph transformer with invariant/environment branches and independent novelty scores. Fifteen immutable synthetic streams at 50,000, 100,000, and 500,000 events use five seeds and chronological 50/20/30 partitions; D/E are excluded from fitting and calibration. The recorded screening study contains 180 centralized neural fits, 20 clean federated simulations, and 30 attacked simulations, alongside independently verified historical logistic baselines. At 500,000 events, the full variant achieves known-class AUROC 0.506 \u00b1 0.014, AP 0.022 \u00b1 0.001, and F1 0.037 \u00b1 0.002; its energy novelty AUROC is 0.635 \u00b1 0.019 (mean \u00b1 sample SD, five seeds). FedAvg, FedProx, SCAFFOLD, and coordinate-median aggregation are compared at 50,000 events with matched attack conditions. These are measured screening results, not evidence of causal identification, predictive superiority, or privacy. Fixed daily bank timing, eight-epoch/round budgets, synthetic-only evaluation, and the restricted snapshot architecture limit interpretation. Public-data and continual-adaptation evaluations remain incomplete."
+    },
+    {
+      "paragraph": 15,
+      "before": "CausalFed-TGNN is designed to address this integration problem by combining heterogeneous temporal graph encoding, representation decomposition, independent novelty scoring, federated aggregation, drift-aware adaptation, and explicit provenance controls. The evidence currently available comprises data audits, corrected novelty diagnostics, and pooled logistic-regression reference models on synthetic streams. The proposed graph architecture, federated optimisation, adversarial robustness, public-data validation, and component ablations remain to be evaluated.",
+      "after": "The present execution evaluates a finite-history implementation of the proposed graph framework, matched representation ablations, independent novelty scores, and four-bank federated simulations. Results are traceable to saved predictions and checkpoints. This implementation narrows the conceptual architecture: continual adaptation, unrestricted temporal memory, and public-data validation remain pending."
+    },
+    {
+      "paragraph": 16,
+      "before": "The contributions are therefore separated into proposed methodological components and completed reproducibility evidence:",
+      "after": "The contributions distinguish the broader methodological proposal from the implemented screening study:"
+    },
+    {
+      "paragraph": 21,
+      "before": "An executed reproducibility baseline comprising hash-verified synthetic datasets, explicit temporal partitions, 30 pooled logistic-regression fits across 15 streams, corrected novelty diagnostics, and traceable result tables and figures.",
+      "after": "An executed evidence package containing 180 centralized neural fits, 20 clean federated simulations, 30 attacked simulations, five-seed summaries, paired ablation differences, per-bank metrics, checkpoints, and independently verified historical logistic evidence."
+    },
+    {
+      "paragraph": 40,
+      "before": "The literature provides mature components for graph fraud detection, temporal modelling, federated optimisation, invariant learning, OOD detection, continual learning, robustness, and explainability. The contribution of CausalFed-TGNN is not that each component is new in isolation, but that they are organised under a common leakage-controlled evaluation contract with explicit claim boundaries and provenance. The completed synthetic baselines provide an auditable comparator and expose protocol limitations; they do not demonstrate the integrated graph model or establish superiority.",
+      "after": "The contribution is an integrated, leakage-controlled evaluation contract and its finite-history implementation. The new neural and federated records permit measured comparisons within this scope; they do not validate every conceptual component or establish predictive superiority, causal invariance, privacy, or real-world generalisation."
+    },
+    {
+      "paragraph": 56,
+      "before": "Each raw transaction is represented as a transaction node connected to typed entity nodes. Relations encode transaction initiation, account ownership, device usage, payment destination, and location occurrence; forward and reverse edge types are retained so that message passing can distinguish semantic direction. Timestamps, elapsed-time features, and recent-history context couple graph structure to event order while preserving the temporal split used for evaluation.",
+      "after": "The implemented prediction graph has one transaction and four bank-local entity snapshots: account, merchant, device, and location. Customer/account identifiers are redundant aliases and are collapsed. Entity-to-transaction context_for edges and reverse uses edges are retained. Each snapshot contains the mean log amount of at most eight previous same-entity events, normalized prior frequency, log elapsed days since the last event, and a history indicator. Snapshots are read before appending the current event. Separate snapshots prevent future entity states from leaking between predictions; earlier unlabelled held-out events may update history prequentially."
+    },
+    {
+      "paragraph": 60,
+      "before": "The temporal module augments event order with deterministic elapsed-time features so that the encoder can distinguish rapid activity bursts from long inactivity gaps even when event rank is similar. A heterogeneous graph transformer (HGT) supplies relation-aware node representations [6]. All temporal features must use only information available at or before the prediction timestamp; future events, post-outcome aggregates, and labels are excluded to prevent temporal leakage.",
+      "after": "The implemented encoder uses one PyTorch Geometric HGTConv with width 24 and two attention heads, a residual transaction projection, and ReLU. It reads deterministic finite-history summaries rather than a learned recurrent memory. Reverse-edge outputs do not feed the current transaction in this one-layer readout. Elapsed time is the entity revisit interval, not a variable bank-arrival process; original bank event spacing remains fixed daily. Training-only standardization and event-specific histories prevent held-out information from entering preprocessing."
+    },
+    {
+      "paragraph": 64,
+      "before": "The training objective combines supervised classification, multi-environment invariance, cross-environment representation alignment, replay, and an optional Kullback-Leibler (KL) stability term (Equation 3). The corresponding \u03bb coefficients are hyperparameters. Inactive terms must be reported as zero, and all loss weights must be selected using training/validation information only, never by optimising on the held-out unknown test mechanism.",
+      "after": "The executed objective is mean fraud cross entropy plus 0.1 times an IRMv1-inspired scale-gradient penalty, 0.01 times supervised cross-bank contrastive loss, and 0.1 times bank-classification loss on the environment branch. Contrastive temperature is 0.2 with at most 128 anchors per shuffled batch. Replay and KL coefficients are zero. IRM and contrastive terms are explicitly disabled for single-bank local batches. The fraud head reads only the invariant branch. Exact formulas and ablation definitions are supplied in EXPERIMENTAL_METHODS.md."
+    },
+    {
+      "paragraph": 66,
+      "before": "Energy scoring is retained as the primary logit-based novelty baseline because it is directly computable from classifier outputs. The protocol additionally evaluates maximum-logit margin and prototype distance in representation space. For every score, the implementation must specify score direction, normalisation (if any), prototype construction, and the validation-only threshold rule. Open-set reporting includes both ranking and operating-point metrics because apparently high unknown accuracy can be driven by class imbalance.",
+      "after": "Energy is negative logsumexp of the two logits at temperature one. The classifier-only margin comparator is the negative absolute logit difference; prototype distance is minimum Euclidean distance to two training-only class centroids. Every score increases toward unknown, without normalization. Thresholds are the linear 95th percentile of known validation scores, using score \u2265 threshold. FPR95 is a descriptive test ROC statistic, not a threshold calibrated on unknown test labels. Amount is retained as an untrained, population-matched novelty comparator."
+    },
+    {
+      "paragraph": 76,
+      "before": "Each institution acts as one federated client and performs local optimisation on its own temporally ordered graph data. At each communication round, eligible clients train from the current global state and transmit model-update information to the server; raw transaction records are not transmitted. The aggregation rule is modular so that Federated Averaging (FedAvg), FedProx, SCAFFOLD, adaptive weighting, and a selected robust rule can be compared under the same client partition, participation schedule, temporal split, and random seeds [42-46].",
+      "after": "The executed federated experiment simulates four banks in one process with full participation, eight communication rounds, and one local SGD epoch per round at learning rate 0.03. FedAvg uses sample-weighted averaging; FedProx adds a proximal coefficient of 0.01; SCAFFOLD uses local/server control variates; coordinate median averages the middle two coordinates. Checkpoints use lowest pooled validation cross entropy. The server-side validation and different optimizer schedule constrain comparisons with pooled Adam. Single-bank local training disables IRM and cross-bank alignment, so it is not the identical centralized invariant objective."
+    },
+    {
+      "paragraph": 90,
+      "before": "Baselines are grouped by modelling assumption. Traditional baselines include logistic regression, random forest, and gradient-boosted trees; the neural tabular baseline is a multilayer perceptron (MLP); graph baselines include homogeneous and temporal graph models; and the full framework adds heterogeneous relation types together with invariant and open-set modules. Federated comparisons include FedAvg, FedProx, SCAFFOLD, adaptive aggregation, and a selected robust rule. All comparisons must share the same temporal split, client assignment, label-delay handling, unknown holdout, seed set, and evaluation metrics.",
+      "after": "Executed neural comparators are a six-feature Context MLP, a history-matched MLP, homogeneous GraphSAGE, temporal GraphSAGE, static HGT, temporal HGT, and the decomposed full variant. The history-matched MLP receives the same entity summaries as graph models. Static here means no elapsed-time input, while causal histories remain available. Centralized training uses Adam at 0.001, batch size 2048, width 24, and eight epochs. Random forest and boosted-tree candidates remain unexecuted. Historical Amount LR and Context LR evidence is independently verified rather than silently treated as new fits."
+    },
+    {
+      "paragraph": 94,
+      "before": "Note. Attack outcomes remain NOT YET EVALUATED. The table defines the threat/evidence contract and does not establish attack resistance.",
+      "after": "Note. Label flipping, sign-scaled update poisoning, and Sybil/collusion are executed under the controlled 50k protocol reported below. Backdoor trigger evaluation remains pending. Outcomes establish neither universal attack resistance nor privacy."
+    },
+    {
+      "paragraph": 100,
+      "before": "The reproducibility package links generator code, model-upgrade utilities, YAML configuration, per-run metadata, CSV outputs, figures, workbooks, and a consolidated RESULTS_MANIFEST.json. Every completed model run is required to record the software environment, seed, data and split identifiers, configuration hash, checkpoint hash, client participation, threshold policy, metric support, and evidence status. Pending cells must remain pending rather than being populated from earlier manuscript versions.",
+      "after": "The canonical RESULTS_MANIFEST.json links each run to its source snapshot, configuration, dataset and split hashes, checkpoint, saved predictions, epoch/round log, environment, and runtime scope. Historical manifests and raw inputs remain unchanged. Known and open-set metrics are independently reconstructed from saved predictions. Source hashes are used because no Git commit is available; no commit identifier is fabricated."
+    },
+    {
+      "paragraph": 102,
+      "before": "For completed neural experiments, each model should be evaluated over the pre-specified seed set and reported with a central estimate plus an explicitly named dispersion or uncertainty measure when available. Statistical comparisons should use matched runs where the design permits and must identify the comparison population. No test-set tuning is permitted: temporal features, normalisation, class thresholds, novelty thresholds, prototypes, hyperparameters, and early-stopping decisions are derived from training/validation information only. Missing variation estimates remain missing rather than being reconstructed from aggregate values.",
+      "after": "Summaries report mean and sample SD only for five completed distinct seeds at the same scale and configuration. Paired ablation differences retain seed matching. No confidence intervals, p-values, or statistical-significance claims are made. Checkpoints minimize validation cross entropy; classification thresholds maximize validation F1 with highest-threshold tie breaking. Eight epochs or rounds is a fixed screening budget, not evidence of convergence. Model and generator randomness use the same seed and are not disentangled."
+    },
+    {
+      "paragraph": 122,
+      "before": "The amount diagnostic provides only limited novelty separation (Table 5; Figure 9). At 500,000 events, the validation-calibrated threshold yields mean D/E recall of 9.55% and a false-positive rate of 6.26% among non-D/E late events. Thus, a nominal 5% upper-tail rule calibrated on validation amounts does not preserve a 5% late-test false-alarm rate after the generator distribution changes. Low unknown recall at this operating point and AUROC close to 0.5 argue against treating amount alone as an effective novelty detector. Energy, margin, and representation-distance scores remain untested because the graph-model representations have not been trained.",
+      "after": "The original amount novelty diagnostic remains a weak reference on the same late-event population. Trained energy, negative-margin, and prototype-distance scores are now evaluated independently on all test events, with D/E positive and known validation-only thresholds. Table 11 reports their five-seed ranking and operating characteristics. A favorable ranking metric must not be interpreted as an operational detection guarantee; unknown recall and known false-positive rate at the fixed threshold are retained in the machine-readable records."
+    },
+    {
+      "paragraph": 127,
+      "before": "Note. Checks are recorded for each of the 15 streams. The source generator and historical manifests remain unchanged. The analysis code validates ranking direction, score ties, split separation, and model convergence before results are reported.",
+      "after": "Note. All 15 original streams pass hash, support, chronological separation, unique-ID, and D/E-exclusion checks. Source generator and historical manifests are unchanged. Historical logistic convergence is recorded separately; neural and federated runs complete a fixed screening budget without a convergence claim."
+    },
+    {
+      "paragraph": 129,
+      "before": "6.5 Outstanding empirical validation",
+      "after": "6.5 Evidence completion and remaining gates"
+    },
+    {
+      "paragraph": 130,
+      "before": "Completed evidence now comprises the hash/split audit, corrected amount diagnostics, and two pooled logistic-regression model specifications fitted across 15 synthetic streams. The neural comparator grid, graph-model ablations, trained-representation novelty scores, federated optimisation, adversarial robustness, continual adaptation, and public-data validation remain pending or blocked (Table 9). The executed reference models do not complete those evidence blocks.",
+      "after": "New recorded evidence comprises 180 centralized neural fits, 20 clean four-bank federated simulations, and 30 attacked simulations. Each completed run retains a reload-tested checkpoint and saved predictions. Graph comparisons, representation ablations, elapsed-time removal on original streams, and trained novelty scores are now evaluated. Continual adaptation, realistic temporal-stress generation, public-data performance, and unseen-bank transfer remain pending. Consequently, the broader project remains experimentally partial."
+    },
+    {
+      "paragraph": 132,
+      "before": "Note. PENDING/BLOCKED states are retained as explicit evidence boundaries and must be replaced only by traceable run records from the final protocol; values from earlier manuscript versions are not treated as current evidence.",
+      "after": "Note. Completion applies only to the specific recorded configuration and scope. The output filename is not a scientific completion claim. Pending modules require separate traceable experiments."
+    },
+    {
+      "paragraph": 135,
+      "before": "The executed baselines use chronological splits, a held-out mechanism set, training-only normalisation, and validation-only thresholds. Their weak discrimination, together with the failure of the context specification to improve on amount alone, shows that these particular low-capacity feature sets are insufficient under the imposed synthetic shift. This result does not establish that graph learning, invariant regularisation, or federated optimisation will resolve the observed limitations; each component requires a separate matched experiment.",
+      "after": "OBSERVED: The recorded tables quantify discrimination, novelty detection, ablation differences, and attack effects under one compact training budget. Completion of a graph run does not establish that message passing improves on tabular modeling. The history-matched MLP is needed to distinguish extra input information from architecture. Negative and near-chance outcomes are retained; the protocol does not support a state-of-the-art or significance claim."
+    },
+    {
+      "paragraph": 136,
+      "before": "The invariant branch remains a central hypothesis rather than an established benefit. Multi-environment regularisation may reduce institution-specific shortcuts and improve transfer under distribution shift, but it may also suppress useful local signal, become unstable when environments are weakly separated, or simply relocate nuisance information into another representation. Likewise, greater sensitivity to novel events can increase false alarms. The invariant/environment branches and novelty mechanisms therefore require multi-seed ablations and explicit operating-point analysis.",
+      "after": "HYPOTHESIZED: Limited optimization, low predictive signal, class imbalance, and generator-defined mechanism selection may contribute to weak discrimination. These explanations are not established by the present runs. Invariant-loss ablations evaluate temporal generalization within the same four banks; they do not test unseen-bank transfer or identify a causal representation. Changes in branch or relation capacity are also potential confounders and are documented."
+    },
+    {
+      "paragraph": 141,
+      "before": "Several limitations constrain interpretation. First, the executed models are two pooled logistic-regression reference specifications on synthetic data; the proposed neural graph model, federated comparisons, component ablations, and adversarial/continual experiments remain pending. Second, fixed daily event gaps prevent evaluation of temporal burst handling. Third, unknown mechanisms are defined by the same generator that assigns labels, which limits external validity. Fourth, the known-class test deliberately excludes D/E and therefore evaluates a different population from all-fraud screening. Fifth, PaySim acquisition and IEEE-CIS authorisation remain incomplete in the available evidence.",
+      "after": "The evidence is synthetic-only and uses four generator-defined bank environments, five seeds, and eight-epoch/round screening budgets without a hyperparameter search. The implemented one-layer finite-history snapshot architecture is narrower than the conceptual framework. Customer/account redundancy is collapsed; histories are summarized deterministically. Fixed daily bank timing prevents realistic arrival-gap and burst-timing claims. Known-class evaluation excludes D/E and must not be confused with all-fraud screening. Public-data acquisition and authorization remain incomplete."
+    },
+    {
+      "paragraph": 143,
+      "before": "The open-set conclusions are limited to raw amount as a diagnostic proxy; energy, margin, and learned prototype distances remain untested. Continual adaptation can introduce forgetting, confirmation bias, or attack amplification and has not been evaluated. The reported sample SD describes variation across five synthetic seeds without confidence intervals, hypothesis tests, or claims of independent real-world replication. Finally, the architecture diagrams are conceptual and do not constitute evidence that the depicted modules have been implemented or validated.",
+      "after": "Energy, negative margin, and learned prototype scores are evaluated only under the synthetic holdout protocol. Continual adaptation and explanation-quality evaluation remain pending. The federated simulation disables multi-environment regularization in single-bank local batches and uses pooled validation. Attack assumptions are fixed and limited; sign-flipped updates need not degrade every metric when clean models are weak. Sample SD across five seeds is not a confidence interval or real-world replication guarantee. Conceptual figures remain labelled as such."
+    },
+    {
+      "paragraph": 144,
+      "before": "These limitations define the boundary between a reproducible research protocol and a completed empirical validation. Addressing them requires new experiments or author-supplied implementation details rather than stronger editorial wording.",
+      "after": "The expanded package provides verifiable screening evidence while retaining incomplete gates. Longer-budget validation, held-out-bank experiments, variable-arrival stress tests, public data, and continual/explanation evaluations are needed before stronger architectural or deployment claims."
+    },
+    {
+      "paragraph": 146,
+      "before": "CausalFed-TGNN defines an integrated protocol for federated heterogeneous temporal graph fraud detection. The present execution contributes 30 pooled logistic-regression fits, corrected amount-based novelty diagnostics, and reproducible data checks across 15 synthetic streams. Discrimination remains weak, the tested context features do not improve the amount-only reference model on mean AUROC or AP, and fixed event spacing limits temporal claims. These findings provide an auditable baseline and identify protocol revisions required before the proposed architecture can be evaluated credibly. They do not validate the heterogeneous graph model, invariant learning, federated robustness, continual adaptation, or public-data generalisation.",
+      "after": "The finite-history CausalFed-TGNN implementation was evaluated through 180 centralized fits, 20 clean federated simulations, and 30 attacked simulations with saved provenance. At 500,000 events its known AUROC is 0.506 \u00b1 0.014 and energy novelty AUROC is 0.635 \u00b1 0.019. These measured outcomes and matched ablations support a reproducible screening comparison, not a general superiority claim. Synthetic dependence, fixed timing, limited optimization, same-bank evaluation, and missing public/continual validation keep the broader project incomplete."
+    },
+    {
+      "paragraph": 148,
+      "before": "The accompanying package contains run_analysis.py, make_figures.py, and update_manuscript.py; per-seed result CSVs; fitted logistic coefficients and normalisation parameters; late-test predictions; vector figure masters; and ANALYSIS_MANIFEST.json. The manifest records input hashes, code hash, software versions, split rules, threshold policies, convergence checks, and output hashes. The existing synthetic generator, input CSVs, and historical manifest are preserved. Reproduction requires the 15 hash-matched input streams. No public-data result or trained CausalFed-TGNN checkpoint is included.",
+      "after": "The experimental_validation package supplies source files, pinned dependencies, DATA_AUDIT, RESULTS_MANIFEST.json, individual run records, source snapshots, reload-tested checkpoints, saved late-event predictions, epoch/round logs, generated CSV tables, vector figures, and exact commands in REPRODUCTION.md. Historical ANALYSIS_MANIFEST.json and all raw streams remain unchanged. Source and output hashes permit independent verification. Public-data adapters are schema-tested on artificial fixtures only; no empirical public-data result is included."
+    },
+    {
+      "paragraph": 150,
+      "before": "The completed scale audit uses synthetic financial transactions and does not rely on real customer records. The federated design keeps raw institutional records local, but model updates can still expose information. Deployment with real financial data would therefore require institution-specific governance, threat modelling, privacy protection, access control, audit logging, and regulatory/compliance review beyond the present experimental protocol.",
+      "after": "The executed study uses synthetic records in a single-machine simulation. Client partitioning is an experimental boundary, not a deployed privacy mechanism. Model updates can expose information; no differential privacy or secure aggregation is implemented or claimed. Explanation outputs, if added in future, must describe model behavior rather than causal effects."
+    }
+  ],
+  "added_tables": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "study_status": "PARTIAL"
+}

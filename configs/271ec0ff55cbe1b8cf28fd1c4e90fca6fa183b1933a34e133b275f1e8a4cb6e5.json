@@ -1,0 +1,21 @@
+{
+  "kind": "full",
+  "width": 24,
+  "epochs_or_rounds": 8,
+  "batch_size": 2048,
+  "learning_rate": 0.03,
+  "optimizer": "SGD",
+  "method": "fedprox",
+  "attack": "clean",
+  "local_epochs": 1,
+  "prox_mu": 0.01,
+  "history_window": 8,
+  "lambda_inv": 0.0,
+  "lambda_con": 0.0,
+  "lambda_env": 0.1,
+  "lambda_replay": 0.0,
+  "lambda_KL": 0.0,
+  "checkpoint_selection": "lowest validation cross entropy",
+  "known_threshold": "maximum validation F1; highest threshold on ties",
+  "attack_spec": null
+}

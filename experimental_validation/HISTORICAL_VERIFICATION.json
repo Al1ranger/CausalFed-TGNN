@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "historical evidence independently hash checked and metrics reconstructed; not new fits",
+  "manifest_path": "D:\\Study\\Papers\\p7\\scientific_analysis\\results\\ANALYSIS_MANIFEST.json",
+  "manifest_sha256": "d837f530d275e70f99863164ba362b072dec35602f8e524141a16698d6fab864",
+  "verified_fits": 30,
+  "original_protocol": {
+    "split": "per-bank chronological 50/20/30 percent; global non-overlap asserted",
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "l2": 0.001,
+    "regularization": "mean log loss plus lambda/2 times squared non-intercept coefficients",
+    "max_iterations": 60,
+    "tolerance": 1e-08,
+    "known_threshold": "validation maximum F1, largest threshold on ties",
+    "novelty": "raw amount high means unknown; validation 95th percentile",
+    "features": {
+      "Amount LR": [
+        "log1p(amount)"
+      ],
+      "Context LR": [
+        "log1p(amount)",
+        "log1p(1000 * prior client merchant count / (prior client events + 1))",
+        "log1p(1000 * prior client device count / (prior client events + 1))",
+        "Bank_B",
+        "Bank_C",
+        "Bank_D"
+      ]
+    },
+    "history": "prequential unlabeled history includes earlier validation/test events; excludes current and future events",
+    "seed_summary": "mean and sample standard deviation ddof=1; no confidence intervals or significance claims"
+  },
+  "source_environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  }
+}

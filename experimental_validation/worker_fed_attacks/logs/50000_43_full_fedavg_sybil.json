@@ -1,0 +1,522 @@
+[
+  {
+    "epoch_or_round": 1,
+    "train_loss": 0.8878841990756988,
+    "validation_loss": 1.060103178024292,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.4869934449272896,
+      "ap": 0.0347517876742476,
+      "fpr95": 0.9698000412286126,
+      "balanced_accuracy": 0.5,
+      "brier": 0.42585180238678993,
+      "ece": 0.629339264178276
+    },
+    "seconds": 2.2086126999929547,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 0.8661387406539917,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 0.8674916028785705,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 0.9054303128433228,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 0.9124761399269103,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 2,
+    "train_loss": 1.135280221810341,
+    "validation_loss": 1.5550545454025269,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.482462102188852,
+      "ap": 0.0324014867991116,
+      "fpr95": 0.974335188620903,
+      "balanced_accuracy": 0.5,
+      "brier": 0.6163990544975061,
+      "ece": 0.7660460177719592
+    },
+    "seconds": 2.4877471000072546,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 1.1485209172058106,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 1.106668533821106,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 1.1248165610694885,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 1.1611148751449585,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 3,
+    "train_loss": 1.5618438805770873,
+    "validation_loss": 2.678579092025757,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.4556176751766397,
+      "ap": 0.026867317401630744,
+      "fpr95": 0.9764996907854051,
+      "balanced_accuracy": 0.5,
+      "brier": 0.8490516225367292,
+      "ece": 0.9054551671028138
+    },
+    "seconds": 2.525491400039755,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 1.6394935174942016,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 1.5197853518676758,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 1.5005916221237183,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 1.5875050308227538,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 4,
+    "train_loss": 2.458266935214996,
+    "validation_loss": 5.881971836090088,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.4379353734579047,
+      "ap": 0.02536045130155737,
+      "fpr95": 0.9513502370645228,
+      "balanced_accuracy": 0.5,
+      "brier": 0.9645380288604011,
+      "ece": 0.9672663785934448
+    },
+    "seconds": 2.5499979999731295,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 2.732946150817871,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 2.390106835823059,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 2.2952048119354247,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 2.41480994228363,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 5,
+    "train_loss": 4.8311398571205135,
+    "validation_loss": 18.44797134399414,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.46128903056036324,
+      "ap": 0.027338140290409305,
+      "fpr95": 0.9593898165326736,
+      "balanced_accuracy": 0.5,
+      "brier": 0.9701996760369411,
+      "ece": 0.9701998211860656
+    },
+    "seconds": 2.0848365999991074,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 5.949007564086914,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 4.61762681098938,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 4.366279605102539,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 4.391645448303223,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 6,
+    "train_loss": 12.569830624313354,
+    "validation_loss": 111.34542846679688,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.5,
+      "ap": 0.0298,
+      "fpr95": 1.0,
+      "balanced_accuracy": 0.5,
+      "brier": 0.9702,
+      "ece": 0.9702
+    },
+    "seconds": 2.180194800021127,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 18.608889919433594,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 11.016099013824462,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 10.595905245819091,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 10.05842831817627,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 7,
+    "train_loss": 51.47272922708512,
+    "validation_loss": 1754.458740234375,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.5,
+      "ap": 0.0298,
+      "fpr95": 1.0,
+      "balanced_accuracy": 0.5,
+      "brier": 0.9702,
+      "ece": 0.9702
+    },
+    "seconds": 2.1313687000074424,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 93.88299235839844,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 38.898572150955204,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 38.43456432296753,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 34.67478807601929,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  },
+  {
+    "epoch_or_round": 8,
+    "train_loss": 580.9818284811402,
+    "validation_loss": 77703.53125,
+    "validation_metrics": {
+      "support": 10000,
+      "positive": 298,
+      "negative": 9702,
+      "threshold": 0.5,
+      "f1": 0.05787531559526122,
+      "precision": 0.0298,
+      "recall": 1.0,
+      "fpr": 1.0,
+      "auroc": 0.5,
+      "ap": 0.0298,
+      "fpr95": 1.0,
+      "balanced_accuracy": 0.5,
+      "brier": 0.9702,
+      "ece": 0.9702
+    },
+    "seconds": 2.094980099995155,
+    "clients": [
+      {
+        "client": 0,
+        "samples": 6250,
+        "loss": 1207.2806991764833,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 1,
+        "samples": 6250,
+        "loss": 392.53240268356325,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 2,
+        "samples": 6250,
+        "loss": 375.05156293769835,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      },
+      {
+        "client": 3,
+        "samples": 6250,
+        "loss": 349.0626491268158,
+        "active_environments": 1,
+        "irm_disabled_single_environment": true,
+        "contrastive_disabled_single_environment": true
+      }
+    ],
+    "aggregation_weights": [
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666,
+      0.16666666666666666
+    ],
+    "aggregation": "sample-weighted mean"
+  }
+]

@@ -1,0 +1,611 @@
+{
+  "created_utc": "2026-09-29T06:13:37.862183+00:00",
+  "script_sha256": "a35aacf67a9c391355b833cbb2a616d3ca1cf8b0d51f674681c707a735205fbd",
+  "source_manifest_sha256": "40389a15ecccf558996fdb6ef772451e49a2fd28116ff829ea7ad3038a505535",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "platform": "Windows-11-10.0.26200-SP0"
+  },
+  "scope": "synthetic pooled logistic baselines and metric/data diagnostics; not CausalFed-TGNN or federated training",
+  "protocol": {
+    "split": "per-bank chronological 50/20/30 percent; global non-overlap asserted",
+    "seeds": [
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "l2": 0.001,
+    "regularization": "mean log loss plus lambda/2 times squared non-intercept coefficients",
+    "max_iterations": 60,
+    "tolerance": 1e-08,
+    "known_threshold": "validation maximum F1, largest threshold on ties",
+    "novelty": "raw amount high means unknown; validation 95th percentile",
+    "features": {
+      "Amount LR": [
+        "log1p(amount)"
+      ],
+      "Context LR": [
+        "log1p(amount)",
+        "log1p(1000 * prior client merchant count / (prior client events + 1))",
+        "log1p(1000 * prior client device count / (prior client events + 1))",
+        "Bank_B",
+        "Bank_C",
+        "Bank_D"
+      ]
+    },
+    "history": "prequential unlabeled history includes earlier validation/test events; excludes current and future events",
+    "seed_summary": "mean and sample standard deviation ddof=1; no confidence intervals or significance claims"
+  },
+  "tests": "PASS: known-answer AUROC/AP, 100 tied-score pairwise AUROC checks, AP permutation invariance, logistic convergence",
+  "records": [
+    {
+      "scale": 50000,
+      "seed": 42,
+      "csv_sha256": "6d9fdb09df8a952762ed0bcd6304bea561b64fa261973f692b4a37e479b4f0dd",
+      "train": 25000,
+      "validation": 10000,
+      "test": 15000,
+      "known_test": 14414,
+      "unknown_test": 586,
+      "fraud_rate": 0.0381,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_50000_42_Amount_LR.json",
+          "sha256": "7902e0d8dad039dd322b56f3f938834bb384fad04de8646feceb09ef8c9f16a8",
+          "iterations": 4,
+          "gradient_max": 5.647777371609042e-12,
+          "objective": 0.12978275093475344,
+          "predictions_sha256": "1078eb6f70d17b0c9a5fb5f8e258f75b9edde10b45a5f72dd0ecba6bbfba5d6e"
+        },
+        "Context LR": {
+          "file": "model_50000_42_Context_LR.json",
+          "sha256": "45ead91984adba745b11da887634cfbd3125c497399d599b4e1e8e23607cc86d",
+          "iterations": 5,
+          "gradient_max": 4.166871292454744e-15,
+          "objective": 0.1288551372210758,
+          "predictions_sha256": "50bf85e9e04ddb042f1b46b570c5cbd14ca378f9e12a81e8eac7d2daa114c147"
+        }
+      }
+    },
+    {
+      "scale": 50000,
+      "seed": 43,
+      "csv_sha256": "f7d5a84ee96ddee40a19c924017096bc0bd50ba5fe2e2e0c4e7eab7d7d09fbf4",
+      "train": 25000,
+      "validation": 10000,
+      "test": 15000,
+      "known_test": 14391,
+      "unknown_test": 609,
+      "fraud_rate": 0.03862,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_50000_43_Amount_LR.json",
+          "sha256": "0e2dd967c0c1bf697d7e12bb1266473424749385da3fe3bee0726adb448e9d13",
+          "iterations": 4,
+          "gradient_max": 5.6531640163504094e-11,
+          "objective": 0.13284346307432318,
+          "predictions_sha256": "31eff6f1fc4516c5c5667d4c96306f733e2b94f520c0d0cccb4271653b4f2b23"
+        },
+        "Context LR": {
+          "file": "model_50000_43_Context_LR.json",
+          "sha256": "ed892531e6d656ce388a8ba6452414652f4711c2e901772fbc2989e2dc1b3377",
+          "iterations": 5,
+          "gradient_max": 1.1462190085964608e-14,
+          "objective": 0.13177476769952481,
+          "predictions_sha256": "06da86d557c9691fd0a0950544a1fd8bcbb49f25e3d09066ace450ce09a8db1b"
+        }
+      }
+    },
+    {
+      "scale": 50000,
+      "seed": 44,
+      "csv_sha256": "10a7556ac48d16e2b0d5ffd792cb0e16dcb28d442daf8ac5fb21dd9bc4b1e815",
+      "train": 25000,
+      "validation": 10000,
+      "test": 15000,
+      "known_test": 14410,
+      "unknown_test": 590,
+      "fraud_rate": 0.0375,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_50000_44_Amount_LR.json",
+          "sha256": "74e62bd3a3b7e4cd83060a876c86aed74e936f2a3cd8ec0abd5d2039236b4575",
+          "iterations": 4,
+          "gradient_max": 1.9948767495669983e-11,
+          "objective": 0.12631914702649438,
+          "predictions_sha256": "4ee3a8fdfdaa7802c0d44fa9a791af629f2ca96ac093c5dc01f59be6a251d9c7"
+        },
+        "Context LR": {
+          "file": "model_50000_44_Context_LR.json",
+          "sha256": "42f58aec00cb08c8c35d0e73fd0dcf1b603c513b7717bce2aee15eccadb7604a",
+          "iterations": 5,
+          "gradient_max": 6.090777882050702e-14,
+          "objective": 0.12501161773828284,
+          "predictions_sha256": "c5deea6967260d59f8b389f53b9e78a44ddf0115de9d17208bf32679cbada3db"
+        }
+      }
+    },
+    {
+      "scale": 50000,
+      "seed": 45,
+      "csv_sha256": "20f76f7707407f652c7660ab4f5d6cbc8bcb4b66a0594deb427d3912e0277795",
+      "train": 25000,
+      "validation": 10000,
+      "test": 15000,
+      "known_test": 14443,
+      "unknown_test": 557,
+      "fraud_rate": 0.0386,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_50000_45_Amount_LR.json",
+          "sha256": "36fa81d662fb972a29208ded6cc89a4f7c2f44f0b0b791e286e56e5e9f748449",
+          "iterations": 4,
+          "gradient_max": 2.24276684704372e-11,
+          "objective": 0.13569608091344257,
+          "predictions_sha256": "f73bb2851aefb593380944c30c7d6ceebaacbb0d5b540caee43371bdef573f5a"
+        },
+        "Context LR": {
+          "file": "model_50000_45_Context_LR.json",
+          "sha256": "faf74d5464cedf530bbfd108f60b317d62bb81647094cc12940ae2ffea64a727",
+          "iterations": 5,
+          "gradient_max": 4.014312211635118e-13,
+          "objective": 0.13401322433022997,
+          "predictions_sha256": "8d4a9c01d9d7000c969ae9f13a0f6a7e96ba1e74f678683066a0e780082ba085"
+        }
+      }
+    },
+    {
+      "scale": 50000,
+      "seed": 46,
+      "csv_sha256": "796a48831eb4cc6082a8119ba96c84e2e86737215f95560bffe1781d95b1a116",
+      "train": 25000,
+      "validation": 10000,
+      "test": 15000,
+      "known_test": 14435,
+      "unknown_test": 565,
+      "fraud_rate": 0.0386,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_50000_46_Amount_LR.json",
+          "sha256": "a1b5dd96fbcb8f7c486952e8a3455d83f604f1f184bba28cf9f2fd0b853907a0",
+          "iterations": 4,
+          "gradient_max": 7.93073838223357e-11,
+          "objective": 0.13322661777156705,
+          "predictions_sha256": "c1cfe3bf20e81c7b0c3823501f092f332f0b985f2ab506de704895656a978b91"
+        },
+        "Context LR": {
+          "file": "model_50000_46_Context_LR.json",
+          "sha256": "f26479f3915d57d208b0b4ef3370ec398ffec1846ea620a228d04a52e14fa9e8",
+          "iterations": 5,
+          "gradient_max": 1.3672155629862459e-14,
+          "objective": 0.132196283678864,
+          "predictions_sha256": "33fc84fc2c04203e22945be07a24f1f4f820999d1381ab3ff38e073ebb14fea0"
+        }
+      }
+    },
+    {
+      "scale": 100000,
+      "seed": 42,
+      "csv_sha256": "6cf46dd2125c8d8ef45074d3dbe77bad526d9b3379b6f2778e7d60e4901755d6",
+      "train": 50000,
+      "validation": 20000,
+      "test": 30000,
+      "known_test": 28840,
+      "unknown_test": 1160,
+      "fraud_rate": 0.03792,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_100000_42_Amount_LR.json",
+          "sha256": "768453d72fa15dc68aa8709b9d415970b717db8651c509f7eb0628ba6a7da6e3",
+          "iterations": 4,
+          "gradient_max": 3.768852505803277e-11,
+          "objective": 0.12796866013911212,
+          "predictions_sha256": "e060623b6a376473592ca57e97f09b83f0b46a29e44beb37caf587183384c723"
+        },
+        "Context LR": {
+          "file": "model_100000_42_Context_LR.json",
+          "sha256": "b4e6deb014240422fa610637e120faedeb6cfc76dc5c12653cb5848758ce261b",
+          "iterations": 5,
+          "gradient_max": 3.7159097465711e-14,
+          "objective": 0.12658259602385172,
+          "predictions_sha256": "49dd5e1064a9d1f431628570a594f878d42e046ae1ddd1b73bc25e73716fd66b"
+        }
+      }
+    },
+    {
+      "scale": 100000,
+      "seed": 43,
+      "csv_sha256": "302afdf7efbf98a516e3e877cdc03953a75b61b4a4f9461c0d63087e1ded4b67",
+      "train": 50000,
+      "validation": 20000,
+      "test": 30000,
+      "known_test": 28868,
+      "unknown_test": 1132,
+      "fraud_rate": 0.03838,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_100000_43_Amount_LR.json",
+          "sha256": "a56d583b56afb027f44185639df24935110ba09da48eb67ed803026a86b5ed68",
+          "iterations": 4,
+          "gradient_max": 1.9850240459695635e-11,
+          "objective": 0.13383402734630426,
+          "predictions_sha256": "bcdd974526b6e424eff3f87a3c5055f800e15eb2c28c6be7f73e28bbf363a517"
+        },
+        "Context LR": {
+          "file": "model_100000_43_Context_LR.json",
+          "sha256": "9a847b8c90cdd793c3c45f59614364b52adbf75149ce36814b2e48006efd8422",
+          "iterations": 5,
+          "gradient_max": 2.853984382156227e-14,
+          "objective": 0.13247920727192403,
+          "predictions_sha256": "dc1a4bf18f603e48a52425dd254332d5302a200e5f348302f61790b74b4b6ac9"
+        }
+      }
+    },
+    {
+      "scale": 100000,
+      "seed": 44,
+      "csv_sha256": "d614e446820fa1ef0aeedff3997da07ab5ac90f52cb222a295d0e265fee167ed",
+      "train": 50000,
+      "validation": 20000,
+      "test": 30000,
+      "known_test": 28827,
+      "unknown_test": 1173,
+      "fraud_rate": 0.03859,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_100000_44_Amount_LR.json",
+          "sha256": "b34ffb3528f6b98b39d43f83fbbbf657e18b7a25180182c35afba6a0627c4f67",
+          "iterations": 4,
+          "gradient_max": 8.11319655284748e-11,
+          "objective": 0.13385455946522107,
+          "predictions_sha256": "7d8c8fa3857bcbb90947715918a306553ce8321b0b1ded5dcf317c20128ade41"
+        },
+        "Context LR": {
+          "file": "model_100000_44_Context_LR.json",
+          "sha256": "a95cbc469176e2e5fabdc71b6a6960fcd414bc632188a05148239701cf491ce5",
+          "iterations": 5,
+          "gradient_max": 2.910656993204697e-14,
+          "objective": 0.13258181959068843,
+          "predictions_sha256": "cd9e0fb9f025320ac6abcbb55e0199855085aac305f22f80ff0a39e48e2eff7b"
+        }
+      }
+    },
+    {
+      "scale": 100000,
+      "seed": 45,
+      "csv_sha256": "04a74114525cd673471cdf91ead96e70aa4044c3ee44d39f6d8646ddaf7b6e6c",
+      "train": 50000,
+      "validation": 20000,
+      "test": 30000,
+      "known_test": 28836,
+      "unknown_test": 1164,
+      "fraud_rate": 0.03848,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_100000_45_Amount_LR.json",
+          "sha256": "d7b67f37878d0ef5d2dab0d12c06e74dc08d8b90723ce0b7a7548598db8c67f3",
+          "iterations": 4,
+          "gradient_max": 1.3527459089002215e-11,
+          "objective": 0.13358104172653634,
+          "predictions_sha256": "f44378e9d8eca0fbcd32a6387fb8c626d617193a1d7fb6536baa1acb6fcec57c"
+        },
+        "Context LR": {
+          "file": "model_100000_45_Context_LR.json",
+          "sha256": "c1f9ab36c5ca1696914db9bd41381cb9fafcf28a361a946b8a03e2ad63dcacfe",
+          "iterations": 5,
+          "gradient_max": 1.1663312537990578e-14,
+          "objective": 0.13224787435121804,
+          "predictions_sha256": "ed777f07e6437034e6becf2a6ee1f233007bcea67d1f330e252fd8800ac15d19"
+        }
+      }
+    },
+    {
+      "scale": 100000,
+      "seed": 46,
+      "csv_sha256": "1854a2bee97c72054981ab98f7eb7957e3426e47487392d4662fd5183d470382",
+      "train": 50000,
+      "validation": 20000,
+      "test": 30000,
+      "known_test": 28874,
+      "unknown_test": 1126,
+      "fraud_rate": 0.03812,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_100000_46_Amount_LR.json",
+          "sha256": "138c3ef379e6e61c4fbb70b0c4de51d76bf5eff780a60052cfad7085bd11f7e0",
+          "iterations": 4,
+          "gradient_max": 4.317999933722838e-11,
+          "objective": 0.13321491264413626,
+          "predictions_sha256": "af3b98157be006ff1bcdd16186f76dfee636278d9f86e508dc111f79e17dc1ce"
+        },
+        "Context LR": {
+          "file": "model_100000_46_Context_LR.json",
+          "sha256": "b71a55c1c6f1237cba4d8e45ddfbcb20f6cf86d241a45f92f6d3592c6738611d",
+          "iterations": 5,
+          "gradient_max": 2.7245063427550064e-14,
+          "objective": 0.13194914237883437,
+          "predictions_sha256": "5ccd8309f7c9f77f847b23a39e1894285c9738ffa9c7c7724a70935d147038da"
+        }
+      }
+    },
+    {
+      "scale": 500000,
+      "seed": 42,
+      "csv_sha256": "acac778db74380dd86c2fd29272bff57857795e5987bf0b9b421adc13e0e25fc",
+      "train": 250000,
+      "validation": 100000,
+      "test": 150000,
+      "known_test": 144270,
+      "unknown_test": 5730,
+      "fraud_rate": 0.038284,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_500000_42_Amount_LR.json",
+          "sha256": "df79396aed74a372d8df792a2ac5da126594e0167a599ab30db2d124bf48989c",
+          "iterations": 4,
+          "gradient_max": 6.785403297726588e-11,
+          "objective": 0.13404942540026119,
+          "predictions_sha256": "8bdad1430c1daacd1364535303c6c8394323038c5017332ebfd3c755d3a31548"
+        },
+        "Context LR": {
+          "file": "model_500000_42_Context_LR.json",
+          "sha256": "c978c8fa6c946f7d4f0192caa6697d2baa9b9a839fc048480c6e30edfc8dcb9a",
+          "iterations": 5,
+          "gradient_max": 8.409131680917059e-14,
+          "objective": 0.13253168272744317,
+          "predictions_sha256": "028c94b4b67565f03b202d091b7f847239bdd2c09df54e4dab5f74545fd75e95"
+        }
+      }
+    },
+    {
+      "scale": 500000,
+      "seed": 43,
+      "csv_sha256": "031b18fe71426f24b1e356d2471e35b20d377cca27c223d4574f9fc537877c58",
+      "train": 250000,
+      "validation": 100000,
+      "test": 150000,
+      "known_test": 144309,
+      "unknown_test": 5691,
+      "fraud_rate": 0.038326,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_500000_43_Amount_LR.json",
+          "sha256": "4b8c4a75e208a27f7e315c57fab110e6d8920ebd341b8225f941de4fa249d264",
+          "iterations": 4,
+          "gradient_max": 2.4540475237699864e-11,
+          "objective": 0.13328937098356577,
+          "predictions_sha256": "584aa9efe7298ed22a5d89d994f5a8e4448899a24d68061c5d9bca53f7717906"
+        },
+        "Context LR": {
+          "file": "model_500000_43_Context_LR.json",
+          "sha256": "808baf7a43a875f1c5168970af6c4ae96d14439d7e4bda3a7173031914f2ac03",
+          "iterations": 5,
+          "gradient_max": 1.2285426009839284e-14,
+          "objective": 0.13199532277693102,
+          "predictions_sha256": "fbe724e1d6db2e50535b34e7dfe6a26b4723767e38926aadc7e84816ac96b3f7"
+        }
+      }
+    },
+    {
+      "scale": 500000,
+      "seed": 44,
+      "csv_sha256": "55b23380da093ec322be3fc545af916e5a931d938b8cad3bea85d1de7366aa2e",
+      "train": 250000,
+      "validation": 100000,
+      "test": 150000,
+      "known_test": 144354,
+      "unknown_test": 5646,
+      "fraud_rate": 0.038,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_500000_44_Amount_LR.json",
+          "sha256": "c620dc03026d633854a5c424422b5d0dd69d546c6f7c3277eb74c7c78336e9c6",
+          "iterations": 4,
+          "gradient_max": 4.2502205246819355e-11,
+          "objective": 0.13151590634940097,
+          "predictions_sha256": "fd0edcc3d0df093f7230ef3569fbd8dd173f33dafb16a09f57817b8155937a6b"
+        },
+        "Context LR": {
+          "file": "model_500000_44_Context_LR.json",
+          "sha256": "35a6e71dfe8bedfed6a2456f5a6f65a0ef24607ce7aad9518b31a440d790ec70",
+          "iterations": 5,
+          "gradient_max": 1.829673834663481e-14,
+          "objective": 0.1302348088613509,
+          "predictions_sha256": "64e8697a0ca8d2cb6ba17b5bdc7c9b0d0a866218bb503d1f35a77bcfe6eb30c6"
+        }
+      }
+    },
+    {
+      "scale": 500000,
+      "seed": 45,
+      "csv_sha256": "513ebacae6f504c421fe420cf38ef3cded9e495ded077fd7c360bdc9ac18ea6b",
+      "train": 250000,
+      "validation": 100000,
+      "test": 150000,
+      "known_test": 144101,
+      "unknown_test": 5899,
+      "fraud_rate": 0.038784,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_500000_45_Amount_LR.json",
+          "sha256": "3ef203fc3046844041526f0b5031d5c4503d995a89d5724bd360adf85a912d4f",
+          "iterations": 4,
+          "gradient_max": 4.744690636471205e-11,
+          "objective": 0.13319506302202447,
+          "predictions_sha256": "cfba8b654d4c183676a558cbf26b883a33aae257948b0b9473e9bdda37908e8d"
+        },
+        "Context LR": {
+          "file": "model_500000_45_Context_LR.json",
+          "sha256": "5b59d2176a9dd399620aee3c67fe3a922835c00a8bb8ddfeaa2096e65648b21b",
+          "iterations": 5,
+          "gradient_max": 1.0057959798359661e-14,
+          "objective": 0.13198985867802518,
+          "predictions_sha256": "036a58003546c858958375023b7efa989c0fc395d16a1e48af95141e2cd1845e"
+        }
+      }
+    },
+    {
+      "scale": 500000,
+      "seed": 46,
+      "csv_sha256": "bd31aa77b193d7cbca23e5b62053d903885b35be5017839b319d554aa0777d8a",
+      "train": 250000,
+      "validation": 100000,
+      "test": 150000,
+      "known_test": 144334,
+      "unknown_test": 5666,
+      "fraud_rate": 0.038238,
+      "globally_sorted_in_source": false,
+      "within_bank_gap_minutes": [
+        1440.0
+      ],
+      "duplicate_transaction_ids": 0,
+      "unknown_in_train_validation": 0,
+      "models": {
+        "Amount LR": {
+          "file": "model_500000_46_Amount_LR.json",
+          "sha256": "d6605cb9f274cfe1f9d28b8cba8a6680ed30230767cad89518e876b6c23b2b21",
+          "iterations": 4,
+          "gradient_max": 6.656051118625328e-11,
+          "objective": 0.1332596221134687,
+          "predictions_sha256": "26b396e7ae9e089c4a2dfed974f65ede3e268ecd84d109005209e6762671a232"
+        },
+        "Context LR": {
+          "file": "model_500000_46_Context_LR.json",
+          "sha256": "4ebc6bf9d3d75eb288b92e234f4567cde5ac6e88ac491946d41ab9dd022bef75",
+          "iterations": 5,
+          "gradient_max": 4.832105915397733e-14,
+          "objective": 0.13177493769322862,
+          "predictions_sha256": "b4cc8dc9b0203f97486761b2ea77601f8461e52a1cb283ca6b9d62615c6080d3"
+        }
+      }
+    }
+  ],
+  "wall_seconds": 74.1576034000027,
+  "result_hashes": {
+    "bank_metrics.csv": "374c1d0e227178e0af077bab612ef31eb7a11909040926aeeae84c43d5a19ba3",
+    "baselines.csv": "ae4b685baf7906d8353624bb5c627f5eca116081b80bd6cbf1c6bdbbd0633d74",
+    "calibration.csv": "8d4be512c559e4eee5c7672751ec048e04de08d1295381cfe249583b282e336d",
+    "curves.csv": "123b5230721427dfdf63f2d26412dc16ba06285c329124ac999e9c2d77cc4549",
+    "diagnostics.csv": "657bc608e4c08930d3f7b1103c8aaca675fa5e2354e7120ef0b74e6a20bde56f",
+    "predictions_100000_42_Amount_LR.csv": "e060623b6a376473592ca57e97f09b83f0b46a29e44beb37caf587183384c723",
+    "predictions_100000_42_Context_LR.csv": "49dd5e1064a9d1f431628570a594f878d42e046ae1ddd1b73bc25e73716fd66b",
+    "predictions_100000_43_Amount_LR.csv": "bcdd974526b6e424eff3f87a3c5055f800e15eb2c28c6be7f73e28bbf363a517",
+    "predictions_100000_43_Context_LR.csv": "dc1a4bf18f603e48a52425dd254332d5302a200e5f348302f61790b74b4b6ac9",
+    "predictions_100000_44_Amount_LR.csv": "7d8c8fa3857bcbb90947715918a306553ce8321b0b1ded5dcf317c20128ade41",
+    "predictions_100000_44_Context_LR.csv": "cd9e0fb9f025320ac6abcbb55e0199855085aac305f22f80ff0a39e48e2eff7b",
+    "predictions_100000_45_Amount_LR.csv": "f44378e9d8eca0fbcd32a6387fb8c626d617193a1d7fb6536baa1acb6fcec57c",
+    "predictions_100000_45_Context_LR.csv": "ed777f07e6437034e6becf2a6ee1f233007bcea67d1f330e252fd8800ac15d19",
+    "predictions_100000_46_Amount_LR.csv": "af3b98157be006ff1bcdd16186f76dfee636278d9f86e508dc111f79e17dc1ce",
+    "predictions_100000_46_Context_LR.csv": "5ccd8309f7c9f77f847b23a39e1894285c9738ffa9c7c7724a70935d147038da",
+    "predictions_500000_42_Amount_LR.csv": "8bdad1430c1daacd1364535303c6c8394323038c5017332ebfd3c755d3a31548",
+    "predictions_500000_42_Context_LR.csv": "028c94b4b67565f03b202d091b7f847239bdd2c09df54e4dab5f74545fd75e95",
+    "predictions_500000_43_Amount_LR.csv": "584aa9efe7298ed22a5d89d994f5a8e4448899a24d68061c5d9bca53f7717906",
+    "predictions_500000_43_Context_LR.csv": "fbe724e1d6db2e50535b34e7dfe6a26b4723767e38926aadc7e84816ac96b3f7",
+    "predictions_500000_44_Amount_LR.csv": "fd0edcc3d0df093f7230ef3569fbd8dd173f33dafb16a09f57817b8155937a6b",
+    "predictions_500000_44_Context_LR.csv": "64e8697a0ca8d2cb6ba17b5bdc7c9b0d0a866218bb503d1f35a77bcfe6eb30c6",
+    "predictions_500000_45_Amount_LR.csv": "cfba8b654d4c183676a558cbf26b883a33aae257948b0b9473e9bdda37908e8d",
+    "predictions_500000_45_Context_LR.csv": "036a58003546c858958375023b7efa989c0fc395d16a1e48af95141e2cd1845e",
+    "predictions_500000_46_Amount_LR.csv": "26b396e7ae9e089c4a2dfed974f65ede3e268ecd84d109005209e6762671a232",
+    "predictions_500000_46_Context_LR.csv": "b4cc8dc9b0203f97486761b2ea77601f8461e52a1cb283ca6b9d62615c6080d3",
+    "predictions_50000_42_Amount_LR.csv": "1078eb6f70d17b0c9a5fb5f8e258f75b9edde10b45a5f72dd0ecba6bbfba5d6e",
+    "predictions_50000_42_Context_LR.csv": "50bf85e9e04ddb042f1b46b570c5cbd14ca378f9e12a81e8eac7d2daa114c147",
+    "predictions_50000_43_Amount_LR.csv": "31eff6f1fc4516c5c5667d4c96306f733e2b94f520c0d0cccb4271653b4f2b23",
+    "predictions_50000_43_Context_LR.csv": "06da86d557c9691fd0a0950544a1fd8bcbb49f25e3d09066ace450ce09a8db1b",
+    "predictions_50000_44_Amount_LR.csv": "4ee3a8fdfdaa7802c0d44fa9a791af629f2ca96ac093c5dc01f59be6a251d9c7",
+    "predictions_50000_44_Context_LR.csv": "c5deea6967260d59f8b389f53b9e78a44ddf0115de9d17208bf32679cbada3db",
+    "predictions_50000_45_Amount_LR.csv": "f73bb2851aefb593380944c30c7d6ceebaacbb0d5b540caee43371bdef573f5a",
+    "predictions_50000_45_Context_LR.csv": "8d4a9c01d9d7000c969ae9f13a0f6a7e96ba1e74f678683066a0e780082ba085",
+    "predictions_50000_46_Amount_LR.csv": "c1cfe3bf20e81c7b0c3823501f092f332f0b985f2ab506de704895656a978b91",
+    "predictions_50000_46_Context_LR.csv": "33fc84fc2c04203e22945be07a24f1f4f820999d1381ab3ff38e073ebb14fea0",
+    "prevalence.csv": "ea95d2c1e8dc52a6cdcca332fa11e75f71fa519b423ca4e8a56acbf93ce5dd64",
+    "temporal_bins.csv": "3d6b2016486fc3740cbee931ad135696fed4de24ce015431800858425f58d5d0"
+  }
+}

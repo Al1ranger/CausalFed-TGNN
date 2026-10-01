@@ -1,0 +1,10 @@
+**/__pycache__/
+**/.pytest_cache/
+**/packages/
+.venv/
+*.zip
+experimental_validation/qa_*/
+experimental_validation/pilot_pre_freeze/
+experimental_validation/**/predictions/
+CausalFed-TGNN-V4/runs/v4_scale/*.csv
+scientific_analysis/results/predictions_*.csv

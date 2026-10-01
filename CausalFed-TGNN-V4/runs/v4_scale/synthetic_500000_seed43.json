@@ -1,0 +1,28 @@
+{
+  "scale": 500000,
+  "seed": 43,
+  "rows": 500000,
+  "fraud_rate": 0.038326,
+  "banks": 4,
+  "fraud_counts": {
+    "legitimate": 480837,
+    "C": 5554,
+    "B": 4784,
+    "E": 3169,
+    "A": 3134,
+    "D": 2522
+  },
+  "runtime_seconds": 69.76480199999969,
+  "csv_sha256": "031b18fe71426f24b1e356d2471e35b20d377cca27c223d4574f9fc537877c58",
+  "protocol_score_status": "diagnostic_only",
+  "open_set_diagnostic": {
+    "unknown_accuracy": 0.937164,
+    "unknown_f1": 0.03808707366358459,
+    "unknown_auroc": 0.4298655883234509,
+    "unknown_aupr": 0.015955000360982075,
+    "unknown_fpr95": 0.933493017525475,
+    "threshold": 152.68,
+    "unknown_support": 5691
+  },
+  "neural_v4_status": "pending_torch_environment"
+}
