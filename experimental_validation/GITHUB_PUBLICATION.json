@@ -1,0 +1,26 @@
+{
+  "status": "VERIFIED PUBLIC REPOSITORY AND RELEASE",
+  "repository": {
+    "default_branch": "main",
+    "full_name": "Al1ranger/CausalFed-TGNN",
+    "html_url": "https://github.com/Al1ranger/CausalFed-TGNN",
+    "private": false,
+    "visibility": "public"
+  },
+  "artifact_commit": "8aa71bac74e0c5a5444ab641ae2102ac7248d518",
+  "release": {
+    "draft": false,
+    "html_url": "https://github.com/Al1ranger/CausalFed-TGNN/releases/tag/evidence-v1",
+    "id": 401214904,
+    "prerelease": false,
+    "published_at": "2026-10-02T06:07:12Z",
+    "tag_name": "evidence-v1",
+    "target_commitish": "8aa71bac74e0c5a5444ab641ae2102ac7248d518"
+  },
+  "remote_chunks_verified": 197,
+  "release_assets_verified": 198,
+  "archive_sha256": "6389592c3e1719516670a5b5a491cf075cd5b7da05e41ea2923751181063e0e8",
+  "archive_bytes": 411267337,
+  "verification": "GitHub SHA-256 digests match all local chunk hashes",
+  "manuscript_sha256": "fe85c9f2c740bae50a3bfafd791ebc1ff65a02158de525120d3e0f8c37b6f9dd"
+}

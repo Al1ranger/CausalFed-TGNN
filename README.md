@@ -56,11 +56,13 @@ gh release download evidence-v1 --repo Al1ranger/CausalFed-TGNN --pattern "causa
 ```
 
 The evidence archive contains the immutable inputs and all neural/historical
-predictions. Large transfers failed, so 2 MB release chunks are used. Evidence
-publication is pending until every chunk is uploaded and remote-hash verified.
+predictions. Large transfers failed, so 197 verified 2 MB release chunks are used.
+The public [evidence-v1 release](https://github.com/Al1ranger/CausalFed-TGNN/releases/tag/evidence-v1)
+contains all chunks; every GitHub SHA-256 digest matches its local hash.
 restore_evidence.py checks chunk/archive/member hashes and restores all paths.
 Archive/member hashes are in RELEASE_ASSET_MANIFEST.json; chunk hashes are in
-evidence/PARTS_MANIFEST.json. No complete public data release is claimed while pending.
+evidence/PARTS_MANIFEST.json. Publication verification is recorded in
+experimental_validation/GITHUB_PUBLICATION.json.
 Checkpoints, source snapshots, run records, plots, and tables are tracked in Git.
 Dependency binaries and temporary document-render pages are excluded.
 
