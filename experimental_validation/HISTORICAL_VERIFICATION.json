@@ -1,7 +1,7 @@
 {
   "status": "PASS",
   "scope": "historical evidence independently hash checked and metrics reconstructed; not new fits",
-  "manifest_path": "D:\\Study\\Papers\\p7\\scientific_analysis\\results\\ANALYSIS_MANIFEST.json",
+  "manifest_path": "D:\\Study\\Papers\\p7\\CausalFed-TGNN-GitHub\\scientific_analysis\\results\\ANALYSIS_MANIFEST.json",
   "manifest_sha256": "d837f530d275e70f99863164ba362b072dec35602f8e524141a16698d6fab864",
   "verified_fits": 30,
   "original_protocol": {

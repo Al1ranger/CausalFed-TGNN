@@ -3,6 +3,8 @@
 **/packages/
 .venv/
 *.zip
+evidence/*.part*
+evidence/*.chunk*
 experimental_validation/qa_*/
 experimental_validation/pilot_pre_freeze/
 experimental_validation/**/predictions/

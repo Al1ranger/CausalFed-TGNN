@@ -41,22 +41,26 @@ fallback could not be obtained. Inspect pagination before publication use.
 
 ## Verify or reproduce
 
-Use Python 3.12. Install the pinned dependencies into a virtual environment:
+Use Windows, PowerShell, and Python 3.12. Recorded paths use Windows separators.
+Install the pinned dependencies into a virtual environment:
 
 ```powershell
 python -m venv .venv
 .venv/Scripts/python -m pip install -r experimental_validation/requirements-lock.txt
-gh release download evidence-v1 --repo Al1ranger/CausalFed-TGNN --pattern "causalfed-evidence-v1.zip" --dir .
-.venv/Scripts/python -m zipfile -e causalfed-evidence-v1.zip .
+gh release download evidence-v1 --repo Al1ranger/CausalFed-TGNN --pattern "causalfed-evidence-v1.zip.chunk*" --dir evidence
+.venv/Scripts/python experimental_validation/restore_evidence.py
 .venv/Scripts/python experimental_validation/verify_results.py
 .venv/Scripts/python experimental_validation/audit_historical.py
 .venv/Scripts/python -m pytest experimental_validation/tests -q
 .venv/Scripts/python experimental_validation/report.py
 ```
 
-The release archive contains the immutable inputs and all neural/historical
-predictions. Extract it into the repository root to restore every referenced path.
-Its SHA-256 and member hashes are recorded in RELEASE_ASSET_MANIFEST.json.
+The evidence archive contains the immutable inputs and all neural/historical
+predictions. Large transfers failed, so 2 MB release chunks are used. Evidence
+publication is pending until every chunk is uploaded and remote-hash verified.
+restore_evidence.py checks chunk/archive/member hashes and restores all paths.
+Archive/member hashes are in RELEASE_ASSET_MANIFEST.json; chunk hashes are in
+evidence/PARTS_MANIFEST.json. No complete public data release is claimed while pending.
 Checkpoints, source snapshots, run records, plots, and tables are tracked in Git.
 Dependency binaries and temporary document-render pages are excluded.
 

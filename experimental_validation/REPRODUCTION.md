@@ -2,13 +2,13 @@
 
 Run from PowerShell in the repository root. Required immutable input CSVs and
 their historical manifest remain in `CausalFed-TGNN-V4\runs\v4_scale`.
-For the public repository, first restore the evidence release and use Python 3.12:
+For the public repository, first restore the release evidence parts and use Python 3.12:
 
 ```powershell
 python -m venv .venv
 .venv/Scripts/python -m pip install -r experimental_validation/requirements-lock.txt
-gh release download evidence-v1 --repo Al1ranger/CausalFed-TGNN --pattern "causalfed-evidence-v1.zip" --dir .
-.venv/Scripts/python -m zipfile -e causalfed-evidence-v1.zip .
+gh release download evidence-v1 --repo Al1ranger/CausalFed-TGNN --pattern "causalfed-evidence-v1.zip.chunk*" --dir evidence
+.venv/Scripts/python experimental_validation/restore_evidence.py
 $researchPython = (Resolve-Path .venv/Scripts/python.exe).Path
 ```
 
