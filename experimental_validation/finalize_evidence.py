@@ -21,7 +21,7 @@ def main():
        'Tests do not establish external validity, convergence, causal invariance, or privacy.\n',encoding='utf-8')
     files=['CausalFed_TGNN_Experimental_Validation_Complete.docx','RESULTS_MANIFEST.json','EXPERIMENT_STATUS.md',
        'RESEARCH_AUDIT.md','DATA_AUDIT.md','ENVIRONMENT_REPORT.md','TEST_REPORT.md','EXPERIMENTAL_METHODS.md',
-       'RESULTS_SUMMARY.md','LIMITATIONS_AND_OPEN_ITEMS.md','REPRODUCTION.md','DOCUMENT_QA.md']
+       'RESULTS_SUMMARY.md','LIMITATIONS_AND_OPEN_ITEMS.md','REPRODUCTION.md','DOCUMENT_QA.md','DOCUMENT_QA.json']
     manifest=json.loads((ROOT/'RESULTS_MANIFEST.json').read_text())
     central=[r for r in manifest['runs'] if r['status']=='COMPLETE' and r['configuration']['method']=='centralized']
     matrix={(r['scale'],r['seed'],r['model']) for r in central}
@@ -36,6 +36,12 @@ def main():
        unmet_stronger_gates=['continual adaptation','variable-arrival temporal stress','public-data empirical validation',
           'unseen-bank transfer','adaptive aggregation','explanation evaluation','public release'])
     index['document_layout_status']='UNVERIFIED: automated renderer blocked; see DOCUMENT_QA.md'
+    qa_path=ROOT/'DOCUMENT_QA.json'
+    if qa_path.exists():
+        qa=json.loads(qa_path.read_text())
+        if qa.get('status')=='PASS' and qa.get('manuscript_sha256')==sha(ROOT/'CausalFed_TGNN_Experimental_Validation_Complete.docx'):
+            index['document_layout_status']=f'VERIFIED: {qa["pages_reviewed"]} rendered pages visually reviewed'
+            index['document_qa']=qa
     publication=ROOT/'GITHUB_PUBLICATION.json'
     if publication.exists():
         record=json.loads(publication.read_text())

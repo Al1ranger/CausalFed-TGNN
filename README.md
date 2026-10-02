@@ -28,7 +28,7 @@ Eight epochs/rounds constitute a fixed screening budget without convergence clai
 - [Measured results](experimental_validation/RESULTS_SUMMARY.md)
 - [Exact methods](experimental_validation/EXPERIMENTAL_METHODS.md)
 - [Tests](experimental_validation/TEST_REPORT.md)
-- [Document QA limitation](experimental_validation/DOCUMENT_QA.md)
+- [Document QA](experimental_validation/DOCUMENT_QA.md)
 - [Limitations](experimental_validation/LIMITATIONS_AND_OPEN_ITEMS.md)
 - [Tables](experimental_validation/results/tables)
 - [Figures](experimental_validation/results/figures)
@@ -36,8 +36,8 @@ Eight epochs/rounds constitute a fixed screening budget without convergence clai
 The filename ending in Complete is the requested artifact name, not a completion
 claim. Public-data empirical validation, continual adaptation, realistic variable
 arrival stress tests, and unseen-bank transfer remain open.
-Manuscript layout is unverified: automated Word export stalled and the LibreOffice
-fallback could not be obtained. Inspect pagination before publication use.
+Manuscript layout passed a full rendered-page review; hashes and page count are
+recorded in experimental_validation/DOCUMENT_QA.json.
 
 ## Verify or reproduce
 

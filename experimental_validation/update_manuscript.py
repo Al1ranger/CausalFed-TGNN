@@ -5,6 +5,8 @@ from copy import deepcopy
 import pandas as pd
 from docx import Document
 from docx.shared import Inches,Pt
+from docx.enum.table import WD_CELL_VERTICAL_ALIGNMENT
+from docx.enum.text import WD_ALIGN_PARAGRAPH
 from docx.oxml import OxmlElement
 from docx.oxml.ns import qn
 
@@ -56,7 +58,7 @@ def main():
       76:'The executed federated experiment simulates four banks in one process with full participation, eight communication rounds, and one local SGD epoch per round at learning rate 0.03. FedAvg uses sample-weighted averaging; FedProx adds a proximal coefficient of 0.01; SCAFFOLD uses local/server control variates; coordinate median averages the middle two coordinates. Checkpoints use lowest pooled validation cross entropy. The server-side validation and different optimizer schedule constrain comparisons with pooled Adam. Single-bank local training disables IRM and cross-bank alignment, so it is not the identical centralized invariant objective.',
       90:'Executed neural comparators are a six-feature Context MLP, a history-matched MLP, homogeneous GraphSAGE, temporal GraphSAGE, static HGT, temporal HGT, and the decomposed full variant. The history-matched MLP receives the same entity summaries as graph models. Static here means no elapsed-time input, while causal histories remain available. Centralized training uses Adam at 0.001, batch size 2048, width 24, and eight epochs. Random forest and boosted-tree candidates remain unexecuted. Historical Amount LR and Context LR evidence is independently verified rather than silently treated as new fits.',
       94:'Note. Label flipping, sign-scaled update poisoning, and Sybil/collusion are executed under the controlled 50k protocol reported below. Backdoor trigger evaluation remains pending. Outcomes establish neither universal attack resistance nor privacy.',
-      100:'The canonical RESULTS_MANIFEST.json links each run to its source snapshot, configuration, dataset and split hashes, checkpoint, saved predictions, epoch/round log, environment, and runtime scope. Historical manifests and raw inputs remain unchanged. Known and open-set metrics are independently reconstructed from saved predictions. Source hashes are used because no Git commit is available; no commit identifier is fabricated.',
+      100:'The canonical RESULTS_MANIFEST.json links each run to its source snapshot, configuration, dataset and split hashes, checkpoint, saved predictions, epoch/round log, environment, and runtime scope. Historical manifests and raw inputs remain unchanged. Known and open-set metrics are independently reconstructed from saved predictions. Source hashes identify the code used at execution, when no Git commit existed for these runs. Later GitHub delivery commits are recorded separately without rewriting historical run provenance.',
       102:'Summaries report mean and sample SD only for five completed distinct seeds at the same scale and configuration. Paired ablation differences retain seed matching. No confidence intervals, p-values, or statistical-significance claims are made. Checkpoints minimize validation cross entropy; classification thresholds maximize validation F1 with highest-threshold tie breaking. Eight epochs or rounds is a fixed screening budget, not evidence of convergence. Model and generator randomness use the same seed and are not disentangled.',
       122:'The original amount novelty diagnostic remains a weak reference on the same late-event population. Trained energy, negative-margin, and prototype-distance scores are now evaluated independently on all test events, with D/E positive and known validation-only thresholds. Table 11 reports their five-seed ranking and operating characteristics. A favorable ranking metric must not be interpreted as an operational detection guarantee; unknown recall and known false-positive rate at the fixed threshold are retained in the machine-readable records.',
       127:'Note. All 15 original streams pass hash, support, chronological separation, unique-ID, and D/E-exclusion checks. Source generator and historical manifests are unchanged. Historical logistic convergence is recorded separately; neural and federated runs complete a fixed screening budget without a convergence claim.',
@@ -66,12 +68,23 @@ def main():
       135:'OBSERVED: The recorded tables quantify discrimination, novelty detection, ablation differences, and attack effects under one compact training budget. Completion of a graph run does not establish that message passing improves on tabular modeling. The history-matched MLP is needed to distinguish extra input information from architecture. Negative and near-chance outcomes are retained; the protocol does not support a state-of-the-art or significance claim.',
       136:'HYPOTHESIZED: Limited optimization, low predictive signal, class imbalance, and generator-defined mechanism selection may contribute to weak discrimination. These explanations are not established by the present runs. Invariant-loss ablations evaluate temporal generalization within the same four banks; they do not test unseen-bank transfer or identify a causal representation. Changes in branch or relation capacity are also potential confounders and are documented.',
       141:'The evidence is synthetic-only and uses four generator-defined bank environments, five seeds, and eight-epoch/round screening budgets without a hyperparameter search. The implemented one-layer finite-history snapshot architecture is narrower than the conceptual framework. Customer/account redundancy is collapsed; histories are summarized deterministically. Fixed daily bank timing prevents realistic arrival-gap and burst-timing claims. Known-class evaluation excludes D/E and must not be confused with all-fraud screening. Public-data acquisition and authorization remain incomplete.',
+      142:'The method does not implement causal discovery, intervention modelling, or causal-effect estimation despite the historical project name. No differential-privacy accountant or secure-aggregation implementation is present, and parameter exchange alone does not establish privacy. Robust aggregation can fail under adaptive or coordinated attacks and should not be described as a universal security defence. Explanation methods can be unstable, incomplete, or sensitive to perturbations and describe model behaviour rather than ground truth.',
       143:'Energy, negative margin, and learned prototype scores are evaluated only under the synthetic holdout protocol. Continual adaptation and explanation-quality evaluation remain pending. The federated simulation disables multi-environment regularization in single-bank local batches and uses pooled validation. Attack assumptions are fixed and limited; sign-flipped updates need not degrade every metric when clean models are weak. Sample SD across five seeds is not a confidence interval or real-world replication guarantee. Conceptual figures remain labelled as such.',
       144:'The expanded package provides verifiable screening evidence while retaining incomplete gates. Longer-budget validation, held-out-bank experiments, variable-arrival stress tests, public data, and continual/explanation evaluations are needed before stronger architectural or deployment claims.',
       146:f'The finite-history CausalFed-TGNN implementation was evaluated through {len(central)} centralized fits, {len(fed)} clean federated simulations, and {len(attacks)} attacked simulations with saved provenance. At 500,000 events its known AUROC is {fmt(last,"auroc")} and energy novelty AUROC is {fmt(energy,"auroc")}. These measured outcomes and matched ablations support a reproducible screening comparison, not a general superiority claim. Synthetic dependence, fixed timing, limited optimization, same-bank evaluation, and missing public/continual validation keep the broader project incomplete.',
       148:'The experimental_validation package supplies source files, pinned dependencies, DATA_AUDIT, RESULTS_MANIFEST.json, individual run records, source snapshots, reload-tested checkpoints, saved late-event predictions, epoch/round logs, generated CSV tables, vector figures, and exact commands in REPRODUCTION.md. Historical ANALYSIS_MANIFEST.json and all raw streams remain unchanged. Source and output hashes permit independent verification. Public-data adapters are schema-tested on artificial fixtures only; no empirical public-data result is included.',
       150:'The executed study uses synthetic records in a single-machine simulation. Client partitioning is an experimental boundary, not a deployed privacy mechanism. Model updates can expose information; no differential privacy or secure aggregation is implemented or claimed. Explanation outputs, if added in future, must describe model behavior rather than causal effects.'}
     for i,text in replacements.items():replace(i,text)
+    for i,q in enumerate(p):
+        if q.text.strip()=='5.4 Adversarial stress tests':
+            q.paragraph_format.page_break_before=True
+            q.paragraph_format.keep_with_next=True
+            for following in p[i+1:i+5]:
+                if not following.text.strip():following.paragraph_format.keep_with_next=True
+                elif following.text.startswith('Table 3'):
+                    following.paragraph_format.page_break_before=False
+                    following.paragraph_format.keep_with_next=True;break
+                else:break
     d.tables[2].cell(0,0).text='L = Lsup + λinv Linv + λcon Lcon + λenv Lenv + λreplay Lreplay + λKL LKL'
     gate=d.tables[11]
     for row in list(gate.rows)[1:]:gate._tbl.remove(row._tr)
@@ -86,12 +99,22 @@ def main():
     def table(caption,headers,rows,note):
         cap=para(caption);cap.paragraph_format.keep_with_next=True
         t=d.add_table(rows=1,cols=len(headers));t.style=d.tables[9].style
+        borders=OxmlElement('w:tblBorders')
+        for edge in ['top','left','bottom','right','insideH','insideV']:
+            line=OxmlElement('w:'+edge)
+            for key,value in [('val','single'),('sz','4'),('color','D9D9D9')]:line.set(qn('w:'+key),value)
+            borders.append(line)
+        t._tbl.tblPr.append(borders)
         for c,v in zip(t.rows[0].cells,headers):c.text=v
         for row in rows:
             for c,v in zip(t.add_row().cells,row):c.text=str(v)
         for j,row in enumerate(t.rows):
-            for c in row.cells:
+            for k,c in enumerate(row.cells):
+                c.vertical_alignment=WD_CELL_VERTICAL_ALIGNMENT.CENTER
+                shade=OxmlElement('w:shd');shade.set(qn('w:fill'),'E8EDF0' if j==0 else ('F5F7F9' if j%2==0 else 'FFFFFF'))
+                c._tc.get_or_add_tcPr().append(shade)
                 for q in c.paragraphs:
+                    q.alignment=WD_ALIGN_PARAGRAPH.LEFT if headers[k] in ['Model','Score','Ablation','Method','Attack'] else WD_ALIGN_PARAGRAPH.CENTER
                     q.paragraph_format.space_after=Pt(3);q.paragraph_format.space_before=Pt(3)
                     for r in q.runs:r.font.size=Pt(8.5);r.bold=(j==0)
         repeat=OxmlElement('w:tblHeader');t.rows[0]._tr.get_or_add_trPr().append(repeat)

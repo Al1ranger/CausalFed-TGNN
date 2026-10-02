@@ -4,7 +4,8 @@
   "release_members": 275,
   "docx_zip_integrity": "PASS",
   "docx_xml_tables": 18,
-  "document_layout": "UNVERIFIED: renderer blocked",
+  "document_layout": "PASS: all 23 final rendered pages reviewed",
   "all_release_member_sha256": "PASS",
-  "archive_sha256": "6389592c3e1719516670a5b5a491cf075cd5b7da05e41ea2923751181063e0e8"
+  "archive_sha256": "6389592c3e1719516670a5b5a491cf075cd5b7da05e41ea2923751181063e0e8",
+  "manuscript_sha256": "fe85c9f2c740bae50a3bfafd791ebc1ff65a02158de525120d3e0f8c37b6f9dd"
 }

@@ -14,5 +14,6 @@ Status: partial screening study. 180 centralized, 20 clean federated, and 30 att
 - [LIMITATIONS_AND_OPEN_ITEMS.md](LIMITATIONS_AND_OPEN_ITEMS.md)
 - [REPRODUCTION.md](REPRODUCTION.md)
 - [DOCUMENT_QA.md](DOCUMENT_QA.md)
+- [DOCUMENT_QA.json](DOCUMENT_QA.json)
 
 See results/tables and results/figures for generated outputs. Checkpoints and predictions are located by each canonical run record. Run REPRODUCTION.md commands in a fresh sibling directory for independent refitting.
